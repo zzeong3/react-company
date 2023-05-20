@@ -1,0 +1,58 @@
+#vids {
+	width: 100%;
+	height: 100vh;
+	background: lightgreen;
+	position: relative;
+
+	.swiper {
+		height: 100%;
+		padding: 12vw 0;
+
+		.swiper-slide {
+			width: 100%;
+
+			.inner {
+				width: 100%;
+				height: 100%;
+				background: #fff;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-content: flex-start;
+				color: #333;
+				padding: 30px;
+				opacity: 0.5;
+				transform: scale(0.8);
+				transition: opacity 0.5s, transform 0.5s;
+
+				.pic {
+					width: 100%;
+					height: 40%;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+
+				h2 {
+					font: normal 40px/1 'Work+Sans';
+					color: #111;
+					margin-top: 15px;
+				}
+				p {
+					font: 20px/1.3 'Work+Sans';
+					color: #999;
+					margin-top: 20px;
+				}
+			}
+		}
+		.swiper-slide-active {
+			.inner {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+}

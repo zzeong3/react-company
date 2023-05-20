@@ -1,0 +1,73 @@
+.Location {
+	> .inner {
+		#map {
+			width: 100%;
+			height: 50vh;
+			background: #000;
+			position: relative;
+			filter: saturate(0%) invert(0%) brightness(100%);
+		}
+
+		nav {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			align-content: flex-start;
+			margin-top: 30px;
+
+			button {
+				border: none;
+				background: #333;
+				color: #fff;
+				width: 200px;
+				height: 36px;
+				cursor: pointer;
+			}
+
+			ul {
+				display: flex;
+				gap: 10px;
+
+				li {
+					width: 150px;
+					height: 36px;
+					background: #555;
+					color: #ddd;
+					text-align: center;
+					font: 12px/36px '맑은 고딕';
+					cursor: pointer;
+					transition: 0.5s;
+
+					&.on {
+						background: #000;
+						color: orange;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Location {
+		> .inner {
+			nav {
+				button {
+					width: 100%;
+					margin-bottom: 20px;
+				}
+
+				ul {
+					width: 100%;
+					display: flex;
+					justify-content: space-between;
+
+					li {
+						width: 30%;
+					}
+				}
+			}
+		}
+	}
+}

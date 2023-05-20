@@ -1,0 +1,52 @@
+header {
+	width: 100%;
+	background: #222;
+	padding: 20px 14vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h1 {
+		a {
+			font: bold 24px/1 'arial';
+			color: #fff;
+		}
+	}
+
+	#gnb {
+		display: flex;
+		gap: 50px;
+
+		li {
+			a {
+				font: 15px/1 'arial';
+				color: #bbb;
+			}
+		}
+	}
+	.fa-bars {
+		color: #fff;
+		display: none;
+		font-size: 20px;
+		cursor: pointer;
+	}
+}
+
+header.main {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background: transparent;
+}
+
+@media screen and (max-width: $tablet) {
+	header {
+		#gnb {
+			display: none;
+		}
+		.fa-bars {
+			display: block;
+		}
+	}
+}

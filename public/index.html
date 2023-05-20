@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>react-toolkit</title>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=46295187ea513068efc6ffd747770a42"></script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+
+</html>
+
+<!-- 
+  SSR vs CSR
+
+  SSR - Server Side Rendering
+  - 페이지 이동시마다 일일이 서버쪽에 출력될 HTML파일을 요청
+  장점 : 초기 로딩속도는 빠른편, 검색엔진에 최적화 (SEO : Search Engine Optimization)
+  단점 : 페이지 이동시, 같은 페이지 안에서 컨텐츠가 동적으로 바뀌어야 할떄 사용성이 낮음
+
+  CSR - Client Side Rendering
+  - 초기에 화면에 출력될 모든 정보 데이터를 Chunk단위의 자바스크립트 파일로 모두 불러옴
+  장점 : 같은 페이지 안에서 서로 다른 컨텐츠를 실시간으로 변경하면 출력하므로 화면의 동적 컨텐츠 변경이 자유로움
+  단점 : 한번에 모든 데이터를 모두 불러와야 되기 때문에 초기 로딩속도가 SSR방식에 비해 느림, 검색엔진 비 최적화
+
+  프로젝트 구조
+  1.메인페이지
+  - Redux를 통한 전역 상태관리로 멤버, 유튜브, 갤러리, 게시판등의 데이터를 메인페이지 미리보기 추출
+  - Redux-saga를 통해 Flickr같은 비동기 데이터를 효율적으로 전역관리 처리
+  - 메인 페이지에 parallax Scroll기능을 직접 구현
+  - 모션 작업시 발생할 수 있는 다양한 성능저하 이슈 해셜
+  - memo, useMemo, useCallback등을 활용한 메모이제이션 처리
+  - 팝업 제작을 통해 forwardRef등을 통한 자식 컴포넌트의 데이터를 부모데이터로 효율적으로 관리하는 법
+  - requestAnimationFraem을 통해 만들어놓은 객체지향으 모션 플러그인을 리액트에서 활용하는 법
+  - 자주쓰는 리액트 전용 라이브러리 활용 (Swiper, Masonry,Framer-motion)
+
+  2.멤버소개 페이지
+  - 기본적인 내부 데이터 fecting 및 출력
+
+  3.유튜브 영상 페이지
+  - Youtube API를 활용해서 외부 데이터 fetching 및 출력
+  - 데이터 로딩 처리
+
+  4.회원가입 페이지
+  - 폼 데이터 관리 및 Validation처리
+
+  5.게시판 페이지
+  - 자바스크립트에 CRUD (데이터 입출력 state관리)
+  - localStorage에 저장
+
+  6.검색 갤러리 페이지
+  - FLickr API를 이용항 외부 갤러리 fetching
+  - 검색 결과에 따른 state변경 및 자유로운 전환 모션 처리
+
+  7.찾아오는길 페이지
+  - KaKao Map API의 활용
+  - 리액트 전용이 아닌 일반 API를 활용해서 리액트버전으로 커스터마이징
+  ---------------------------------------------------------------
+  위에서 만든 모든 기능을 다시 Redux-toolkit이라는 최신 Redux기능을 통해 고도화
+-->

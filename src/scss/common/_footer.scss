@@ -1,0 +1,32 @@
+footer {
+	width: 100%;
+	padding: 50px 10vw;
+	background: #fff;
+	border-top: 1px solid #ddd;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-content: center;
+
+	h1 {
+		font: bold 24px/1 'arial';
+		color: #777;
+	}
+	p {
+		font: 14px/1 'arial';
+		color: #999;
+		letter-spacing: 1px;
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	footer {
+		h1 {
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 12px;
+		}
+	}
+}

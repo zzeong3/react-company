@@ -1,0 +1,160 @@
+.Gallery {
+	.controls {
+		width: 100%;
+		padding: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.searchBox {
+			input {
+				width: 200px;
+				height: 28px;
+				padding: 10px;
+				border: 1px solid #bbb;
+			}
+			button {
+				width: 80px;
+				height: 28px;
+				border: none;
+				background: #555;
+				font: 12px/1 'arial';
+				color: #fff;
+				cursor: pointer;
+				margin-left: 5px;
+				transform: translateY(-1px);
+			}
+		}
+		nav {
+			display: inline-flex;
+
+			button {
+				width: 130px;
+				height: 28px;
+				border: none;
+				background: #555;
+				font: 12px/1 'arial';
+				color: #fff;
+				cursor: pointer;
+				margin-left: 5px;
+				transform: translateY(-1px);
+			}
+		}
+	}
+	.loader {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.frame {
+		opacity: 0;
+		transform: translateY(200px);
+		transition: opacity 0.5s, transform 0.5s;
+
+		&.on {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		article {
+			width: 25%;
+			padding: 10px;
+			float: left;
+
+			.inner {
+				width: 100%;
+				background: #fff;
+				padding: 14px;
+				box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+
+				.pic {
+					width: 100%;
+					cursor: pointer;
+
+					img {
+						width: 100%;
+					}
+				}
+
+				h2 {
+					font: normal 14px/1.2 'arial';
+					color: #777;
+					margin-bottom: 30px;
+					margin-top: 10px;
+					word-break: break-all;
+				}
+				.profile {
+					display: flex;
+					align-items: center;
+					gap: 8px;
+
+					img {
+						width: 40px;
+					}
+					span {
+						font-size: 11px;
+						color: orange;
+						cursor: pointer;
+						word-break: break-all;
+
+						&:hover {
+							color: orangered;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Gallery {
+		.frame {
+			article {
+				width: 50%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Gallery {
+		.controls {
+			.searchBox {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 10px;
+
+				input {
+					width: 70%;
+				}
+				button {
+					width: calc(30% - 10px);
+				}
+			}
+			nav {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+
+				button {
+					width: 48%;
+					margin-left: 0;
+				}
+			}
+		}
+		.frame {
+			article {
+				width: 100%;
+			}
+		}
+	}
+}
